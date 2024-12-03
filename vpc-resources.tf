@@ -33,7 +33,7 @@ resource "aws_route" "vpc-dev-public-route" {
 
 resource "aws_route_table_association" "vpc-dev-public-route-table-associate" {
   route_table_id = aws_route_table.vpc-dev-public-route-table.id
-  subnet_id = aws_subnet.vpc-dev-public-subnet.id
+  subnet_id = aws_subnet.vpc-dev-public-subnet-1.id
 }
 
 resource "aws_security_group" "dev-vpc-sg" {
