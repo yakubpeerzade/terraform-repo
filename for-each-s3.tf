@@ -8,8 +8,6 @@ resource "aws_s3_bucket" "mys3bucket" {
     }
 
     bucket = "${each.key}-${each.value}"
-    acl = "private"
-
     tags = {
       Environment = each.key
       bucketname =  "${each.key}-${each.value}"
