@@ -20,5 +20,5 @@ resource "aws_instance" "my-tf-ec2" {
 
 resource "aws_eip" "my-eip" {
     instance = aws_instance.my-tf-ec2.id
-    vpc = true
+    domain = true
 }
