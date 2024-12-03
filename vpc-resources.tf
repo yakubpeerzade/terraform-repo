@@ -1,4 +1,4 @@
-resource "aws_vpc" "vpc-dev" {
+/*resource "aws_vpc" "vpc-dev" {
    cidr_block = "10.0.0.0/16"
    tags= {
 
@@ -63,4 +63,4 @@ resource "aws_security_group" "dev-vpc-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   } 
 
-}
+}*/

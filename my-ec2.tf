@@ -1,4 +1,4 @@
-resource "aws_instance" "my-tf-ec2" {
+/*resource "aws_instance" "my-tf-ec2" {
     ami = "ami-0453ec754f44f9a4a"
     instance_type = "t2.micro"
     key_name = "main-server"
@@ -22,3 +22,4 @@ resource "aws_eip" "my-eip" {
     instance = aws_instance.my-tf-ec2.id
     domain = "vpc"
 }
+*/
