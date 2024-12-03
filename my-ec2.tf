@@ -1,9 +1,9 @@
 resource "aws_instance" "my-tf-ec2" {
-    ami = ""
-    instance_type = ""
-    key_name = ""
-    subnet_id = ""
-    vpc_security_group_ids = []
+    ami = "ami-0453ec754f44f9a4a"
+    instance_type = "t2.micro"
+    key_name = "main-server"
+    subnet_id = aws_subnet.vpc-dev-public-subnet-1.id
+    vpc_security_group_ids = [aws_security_group.dev-vpc-sg.id]
     #user_data = file("apache-intall.sh")
     user_data = <<-EOF
     #!/bin/bash
