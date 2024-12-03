@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "mys3bucket" {
+/*resource "aws_s3_bucket" "mys3bucket" {
 
     for_each = {
       "dev" = "my-dapp-bucket-xyz"
@@ -15,4 +15,4 @@ resource "aws_s3_bucket" "mys3bucket" {
     }
 
   
-}
+}*/
