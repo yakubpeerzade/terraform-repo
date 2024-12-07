@@ -24,7 +24,7 @@ variable "instance_count" {
     default = 1
 }
 
-variable "tags" {
+variable "tagsi" {
     type = map(string)
     default = {
       "name" = "apache-server"
