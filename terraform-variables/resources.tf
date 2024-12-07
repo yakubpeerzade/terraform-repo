@@ -6,14 +6,14 @@ resource "aws_security_group" "my-seg" {
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        cidr_block = [0.0.0.0/0]
+        cidr_blocks = ["0.0.0.0/0"]
     }
     ingress{
         description = "Allow port 22 for SSH"
         from_port = 80
         to_port = 80
         protocol = "tcp"
-        cidr_block = [0.0.0.0/0]
+        cidr_blocks = ["0.0.0.0/0"]
     }
 
     egress {
@@ -21,20 +21,19 @@ resource "aws_security_group" "my-seg" {
         from_port = 0
         to_port = 0
         protocol = "-1"
-        cidr_block = ["0.0.0.0/0"]
+        cidr_blocks = ["0.0.0.0/0"]
     }
 }
 
 
 
 resource "aws_instance" "my-ec2-Instance" {
-  ami = 
-  instance_type =
-  key_name =
-  count = 
+ depends_on = [ aws_security_group.my-seg]
+  ami = var.ami_id
+  instance_type = var.instance_type
+  key_name = "main-server"
+  count = var.count
   user_data = file()
-tags = {
-    
-}
-
+  tags = var.tag 
+  vpc_security_group_ids = aws_security_group.my-seg.id
 }
