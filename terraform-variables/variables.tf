@@ -11,7 +11,7 @@ variable "ami_id" {
     default = "i-0a8c9ab4f26636c4a"
 }
 
-variable "count" {
+variable "instance_count" {
     type = number
     description = "Instance type"
     default = 1

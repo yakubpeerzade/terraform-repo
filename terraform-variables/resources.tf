@@ -32,8 +32,8 @@ resource "aws_instance" "my-ec2-Instance" {
   ami = var.ami_id
   instance_type = var.instance_type
   key_name = "main-server"
-  count = var.count
-  user_data = file()
+  count = var.instance_count
+  user_data = file("apache-install.sh")
   tags = var.tag 
   vpc_security_group_ids = aws_security_group.my-seg.id
 }
