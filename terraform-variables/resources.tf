@@ -35,5 +35,5 @@ resource "aws_instance" "my-ec2-Instance" {
   count = var.instance_count
   user_data = file("apache-install.sh")
   tags = var.tagsi 
-  vpc_security_group_ids = aws_security_group.my-seg.id
+  vpc_security_group_ids = [aws_security_group.my-seg.id]
 }
