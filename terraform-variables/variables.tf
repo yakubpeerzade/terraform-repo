@@ -11,9 +11,16 @@ variable "ami_id" {
     default = "i-0a8c9ab4f26636c4a"
 }
 
+variable "instance_type" {
+    type = string
+    description = "EC2 Insrtance Type"
+    default = "t3.micro"
+  
+}
+
 variable "instance_count" {
     type = number
-    description = "Instance type"
+    description = "Instance count"
     default = 1
 }
 
